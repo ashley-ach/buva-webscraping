@@ -44,28 +44,24 @@ class MapfrePage extends Page{
     get selectTerm() {
         return $('#TermAndCondition');
     }
-    get inputNumber() {
-        return $('#Telephone');
-    }
+   
     get btnContinue() {
         return $('#btnSubmitForm');
     }
-    /* get btnDetails(){
+    get btnDetails(){
         return $('#CoverLink1_QP_MapfreDirectoLimited');
-    } */
+    }
 
      //Comportamiento
-    async selectCarBrand(text) {
+    async selectCarBrandBy(text) {
+        await this.selectCarBrand.waitForExist({ timeout: 5000 });
         await this.selectCarBrand.selectByVisibleText(text);
     }
-    async selectCarBrand(brand) {
-        await this.selectCarBrand.waitForExist({ timeout: 5000 });
-        await this.selectCarBrand.selectByVisibleText(brand);
+    
+    async selectCarYearBy(year) {
+        await this.selectCarYear.selectByVisibleText(year);
     }
-    async selectCarYear(year) {
-        await this.selectCarYear.selectByVisibleText(text);
-    }
-    async selectCarModel(model) {
+    async selectCarModelBy(model) {
         await this.selectCarModel.selectByVisibleText(model);
     }
     async fillPersonalInfo(day, month, year, gender) {
@@ -78,8 +74,8 @@ class MapfrePage extends Page{
         await this.inputCp.setValue('06140');
         await this.inputName.setValue('Jose');
         await this.inputMail.setValue('prueba@gmail.com');
-        await this.inputNumber.setValue('5555555564');
-        await this.btnContinueQuote.click();
+        await this.inputNumber.setValue('555555554');
+        await this.btnContinue.click();
 
     }
     async acceptTerm() {

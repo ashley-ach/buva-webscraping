@@ -15,14 +15,14 @@ Given('I am on the mapfre quoter home page', async()=>{
 });
 
 When('I select my car brand', async()=>{
-    await MapfrePage.selectCarBrand("SUZUKI");
+    await MapfrePage.selectCarBrandBy("SUZUKI");
 }); 
 
 Then('I select my car year', async()=>{
-    await MapfrePage.selectCarYear("2023");
+    await MapfrePage.selectCarYearBy("2023");
 });
 Then('I select my car model', async()=>{
-    await MapfrePage.selectCarModel("SWIFT 1.2 GLX TA");
+    await MapfrePage.selectCarModelBy("SWIFT 1.2 GLX TA");
     await browser.pause(5000);
 });
 When('I fill the personal data form', async()=>{
@@ -97,11 +97,4 @@ When('I view my car info and extract it', async()=>{
     await csvWriter.writeRecords(records);
     console.log('Car info extracted');
 
-
-
-
-
-
-});     
-       
-        
+});
